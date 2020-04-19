@@ -9,7 +9,7 @@ class User:
 
        self.user_name=user_name
        self.email=email
-       self.phone_number=account_name
+       self.account_name=account_name
        self.password=password
 
     user_list=[] # Empty user list
