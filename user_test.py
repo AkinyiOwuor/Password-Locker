@@ -81,12 +81,12 @@ class TestUser(unittest.TestCase):
 
         self.assertTrue(user_exists)
 
-    # def test_display_all_users(self):
-    #     '''
-    #     method that returns a list of all users saved
-    #     '''
+    def test_display_all_users(self):
+        '''
+        method that returns a list of all users saved
+        '''
 
-    #     self.assertEqual(User.display_users(),User.user_list)
+        self.assertEqual(User.display_users(),User.user_list)
 
 
 
