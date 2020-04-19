@@ -56,6 +56,9 @@ class User:
 
     @classmethod
     def copy_password(cls,password):
+        '''
+        method that copies the password
+        '''
         user_found = User.find_by_user_name(password)
         pyperclip.copy(user_found.password)
 
