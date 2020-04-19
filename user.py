@@ -53,3 +53,11 @@ class User:
         method that returns the user list
         '''
         return cls.user_list
+
+    @classmethod
+    def copy_password(cls,password):
+        user_found = User.find_by_user_name(password)
+        pyperclip.copy(user_found.password)
+
+        
+
