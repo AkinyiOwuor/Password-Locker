@@ -11,3 +11,5 @@ class User:
        self.email=email
        self.phone_number=phone_number
        self.password=password
+
+    user_list=[] # Empty user list
