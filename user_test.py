@@ -8,3 +8,6 @@ class TestUser(unittest.TestCase):
 
     def setUp(self):
         '''
+        Set up method that will run before each test cases.
+        '''
+        self.new_user=User()
