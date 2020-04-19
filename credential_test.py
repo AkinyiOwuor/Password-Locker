@@ -1,3 +1,3 @@
 import pyperclip
 import unittest
-from credential import Credential
+from credential import
