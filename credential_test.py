@@ -47,7 +47,7 @@ class TestCredential(unittest.TestCase):
         '''
         Credential.credential_list = []
 
-    def test_delete_contact(self):
+    def test_delete_credential(self):
         '''
         test_delete_credential to test if we can remove a credential from our credential list.
         '''
@@ -70,12 +70,26 @@ class TestCredential(unittest.TestCase):
     def test_credential_exists(self):
 
         self.new_credential.save_credential()
-        test_credential = Credential("Test","Rachel Owuor","facebook","owuorrachel@gmail.com") # new contact
+        test_credential = Credential("Test","Rachel Owuor","facebook","owuorrachel@gmail.com") # new credential
         test_credential.save_credential()
 
         credential_exists = Credential.credential_exist("facebook")
 
         self.assertTrue(credential_exists)
+
+    def test_display_all_credentials(self):
+        '''
+        method that returns a list of all credential saved
+        '''
+
+        self.assertEqual(Credential.display_credentials(),Credential.credential_list)
+
+    
+
+
+
+    
+
 
     
 
