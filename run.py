@@ -46,48 +46,36 @@ def main():
     print('\n')
 
     while True:
-                    print("Use these short codes : cu - create a password Locker account, du - display password locker accounts, fu -find password locker account, ex -exit the password locker account list ")
-
-                    short_code = input().lower()
-
-                    if short_code == 'cu':
-                            print("New Account")
-                            print("-"*10)
-
-                            print ("User name ....")
-                            user_name = input()
-
-                            print("Email address...")
-                            e_address = input()
-
-                            print("Account name ...")
-                            acc_name = input()
-
-                            print("Password ...")
-                            password = input()
-
-
-                            save_users(create_user(user_name,e_address,acc_name,password)) # create and save new user.
-                            print ('\n')
-                            print(f"New User {user_name} {e_address} created")
-                            print ('\n')
-
-                    elif short_code == 'du':
-
-                            if display_users():
-                                    print("Here is a list of all your password Locker accounts and passwords")
-                                    print('\n')
-
-                                    for user in display_users():
-                                            print(f"{user.user_name} {user.account_name} .....{user.password}")
-
-                                    print('\n')
-                            else:
-                                    print('\n')
-                                    print("You dont seem to have any password Locker account saved yet")
-                                    print('\n')
-
-                    elif short_code == 'fu':
+        print("Use these short codes :su-Sign Up, da-Log in to your accout, fa-Find password locker account, ex-Exit Password Locker. ")
+        short_code = input().lower()
+        if short_code == 'su':
+            print("Create a Password Locker Account")
+            print("_"*10)
+            user_name = input('User name:')
+            print ('\n')
+            email = input('Email Address:')
+            print ('\n')
+            account_name = input('Account Name : ')
+            print ('\n')
+            password = input('Password:')
+            save_users(create_user(user_name,email,account_name,password)) 
+            print ('\n')
+            print(f"A new {account_name} account with the user name  {user_name} has been created.")
+            print(f"You can now login to your {account_name} account using your password.")
+            print ('\n')
+        elif short_code == 'da':
+             if display_users():
+                 print("Here is your password locker account and your details")
+                 print('\n')
+                 for user in display_users():
+                     print(f"User name:{user.user_name}  Account name: {user.account_name} Password:{user.password}")
+                     print('\n')
+             else:
+                 print('\n')
+                 print("You dont seem to have created an account yet.Sign up to create a new account.")
+                 print('\n')
+        
+        elif short_code == 'fa':
 
                             print("Enter the password locker account you want to search for")
 
@@ -103,10 +91,10 @@ def main():
                             else:
                                     print("That password locker account does not exist")
 
-                    elif short_code == "ex":
-                            print("Bye .......")
-                            break
-                    else:
+        elif short_code == "ex":
+                            print("Thanks for your time.Bye!.......")
+                            
+        else:
                             print("I really didn't get that. Please use the short codes")
 if __name__ == '__main__':
  main()
